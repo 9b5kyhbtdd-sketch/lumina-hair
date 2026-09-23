@@ -6,7 +6,22 @@
   <!-- スマホ対応に必要 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>LUMINA HAIR STUDIO| Hair Salon</title>
+  <title>LUMINA HAIR STUDIO | 奈良のヘアサロン</title>
+  <meta property="og:title" content="LUMINA HAIR STUDIO">
+
+<meta
+  property="og:description"
+  content="あなたらしい美しさを、もっと自然に。奈良のヘアサロン LUMINA HAIR STUDIO。"
+>
+
+<meta property="og:type" content="website">
+
+<meta property="og:locale" content="ja_JP">
+
+<meta
+  name="description"
+  content="LUMINA HAIR STUDIOは、奈良にある架空のヘアサロンです。丁寧なカウンセリングと確かな技術で、一人ひとりに似合うヘアスタイルをご提案します。"
+>
 
   <style>
     /* ==============================
@@ -26,7 +41,7 @@
       font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
         "Yu Gothic", sans-serif;
       color: #4a443e;
-      background-color: #ffffff;
+      background-color: #faf8f5;
       line-height: 1.8;
     }
 
@@ -40,11 +55,11 @@
     ============================== */
     header {
       width: 100%;
-      background-color: rgba(255, 255, 255, 0.95);
+      background-color: rgba(250, 248, 245, 0.95);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 7%;
+      padding: 16px 7%;
       position: fixed;
       top: 0;
       left: 0;
@@ -103,10 +118,10 @@
         のように書き換えてください。
       */
       background-image:
-        linear-gradient(
-          rgba(40, 35, 30, 0.18),
-          rgba(40, 35, 30, 0.18)
-        ),
+       linear-gradient(
+  rgba(40, 35, 30, 0.35),
+  rgba(40, 35, 30, 0.35)
+),
         url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=85");
 
       background-size: cover;
@@ -118,18 +133,18 @@
       color: white;
     }
 
-    .hero-content h1 {
-      font-family: Georgia, serif;
-      font-size: 55px;
-      font-weight: normal;
-      letter-spacing: 8px;
-      margin-bottom: 10px;
-    }
+   .hero-content h1 {
+  font-family: Georgia, serif;
+  font-size: 64px;
+  font-weight: normal;
+  letter-spacing: 10px;
+  margin-bottom: 12px;
+}
 
-    .hero-content p {
-      font-size: 15px;
-      letter-spacing: 4px;
-    }
+   .hero-content p {
+  font-size: 16px;
+  letter-spacing: 5px;
+}
 
     /* ==============================
        共通セクション
@@ -283,10 +298,42 @@
       color: #d5cdc5;
     }
 
+    .staff-container {
+  flex-direction: column;
+  gap: 50px;
+}
+
+.staff-card {
+  width: 100%;
+}
+
+.staff-card img {
+  height: 400px;
+}
+
+.access-container {
+  flex-direction: column;
+  gap: 30px;
+}
+
+.access-info,
+.access-map {
+  width: 100%;
+}
+
+.access-info {
+  text-align: center;
+}
+
+.access-map iframe {
+  height: 300px;
+}
+
     /* ==============================
        スマートフォン対応
        画面幅768px以下で適用
     ============================== */
+
     @media (max-width: 768px) {
 
       header {
@@ -400,6 +447,142 @@
 /* =========================
    スマートフォン用
 ========================= */
+/* ==============================
+   CONCEPT
+============================== */
+
+.concept-container {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  gap: 70px;
+}
+
+.concept-image {
+  width: 50%;
+}
+
+.concept-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.concept-text {
+  width: 50%;
+  text-align: left;
+}
+
+.concept-text h3 {
+  font-family: Georgia, "Yu Mincho", serif;
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.concept-text p {
+  font-size: 15px;
+  line-height: 2.2;
+}
+
+/* ==============================
+   STAFF
+============================== */
+
+#staff {
+  padding: 100px 7%;
+}
+
+.staff-container {
+  max-width: 900px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+.staff-card {
+  width: 50%;
+  text-align: center;
+}
+
+.staff-card img {
+  width: 100%;
+  height: 420px;
+
+  object-fit: cover;
+
+  margin-bottom: 25px;
+}
+
+.staff-card h3 {
+  font-family: Georgia, serif;
+  font-size: 24px;
+  letter-spacing: 3px;
+
+  margin-bottom: 5px;
+}
+
+.staff-role {
+  font-size: 13px;
+  color: #a58b70;
+
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.staff-card > p:last-child {
+  font-size: 14px;
+  line-height: 2;
+}
+
+/* ==============================
+   ACCESS
+============================== */
+
+.access-container {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: stretch;
+  gap: 60px;
+}
+
+.access-info {
+  width: 40%;
+  text-align: left;
+}
+
+.access-info h3 {
+  font-family: Georgia, serif;
+  font-size: 22px;
+  font-weight: normal;
+
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.access-info p {
+  font-size: 14px;
+  line-height: 2;
+  margin-bottom: 15px;
+}
+
+.access-map {
+  width: 60%;
+}
+
+.access-map iframe {
+  width: 100%;
+  height: 400px;
+
+  border: 0;
+}
 
 @media (max-width: 768px) {
      
@@ -444,6 +627,27 @@
         width: 80%;
         max-width: 350px;
     }
+.concept-container {
+  flex-direction: column;
+  gap: 30px;
+}
+
+.concept-image,
+.concept-text {
+  width: 100%;
+}
+
+.concept-image img {
+  height: 350px;
+}
+
+.concept-text {
+  text-align: center;
+}
+
+.concept-text h3 {
+  font-size: 24px;
+}
 
 }
 
@@ -467,6 +671,7 @@
         <li><a href="#concept">CONCEPT</a></li>
         <li><a href="#menu">MENU</a></li>
         <li><a href="#access">ACCESS</a></li>
+        <a href="#staff">STAFF</a>
 
         <!-- 予約サイトができたら href="#" をURLに変更 -->
         <li>
@@ -495,28 +700,102 @@
   <!-- ==============================
        CONCEPT
   ============================== -->
-  <section id="concept">
+ <section id="concept">
 
-    <div class="section-title">
-      <h2>CONCEPT</h2>
-      <p>私たちの想い</p>
+  <div class="section-title">
+    <h2>CONCEPT</h2>
+    <p>私たちの想い</p>
+  </div>
+
+  <div class="concept-container">
+
+    <!-- 左側の写真 -->
+    <div class="concept-image">
+      <img
+        src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=85"
+        alt="LUMINA HAIR STUDIOのサロンイメージ"
+      >
     </div>
 
+    <!-- 右側の文章 -->
     <div class="concept-text">
 
-      <h3>あなたらしい美しさを、もっと自然に。</h3>
+      <h3>
+        あなたらしい美しさを、<br>
+        もっと自然に。
+      </h3>
 
       <p>
-        LUMINA HAIR STUDIOは、一人ひとりの個性とライフスタイルに寄り添う
-        ヘアサロンです。<br>
+        LUMINA HAIR STUDIOは、一人ひとりの個性と
+        ライフスタイルに寄り添うヘアサロンです。<br><br>
+
         丁寧なカウンセリングと確かな技術で、
         毎日が少し特別になるようなスタイルをご提案します。
       </p>
 
     </div>
 
-  </section>
+  </div>
 
+</section>
+
+<!-- ==============================
+     STAFF
+============================== -->
+
+<section id="staff">
+
+  <div class="section-title">
+    <h2>STAFF</h2>
+    <p>スタイリスト</p>
+  </div>
+
+  <div class="staff-container">
+
+    <div class="staff-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=700&q=85"
+        alt="スタイリスト YUKI"
+      >
+
+      <h3>YUKI</h3>
+
+      <p class="staff-role">
+        Stylist
+      </p>
+
+      <p>
+        ナチュラルで扱いやすいスタイルが得意です。<br>
+        毎日のスタイリングまで丁寧にご提案します。
+      </p>
+
+    </div>
+
+
+    <div class="staff-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=700&q=85"
+        alt="スタイリスト AOI"
+      >
+
+      <h3>AOI</h3>
+
+      <p class="staff-role">
+        Stylist
+      </p>
+
+      <p>
+        カラーと柔らかい質感のスタイルが得意です。<br>
+        一人ひとりに似合うデザインをご提案します。
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
 
   <!-- ==============================
        MENU
@@ -553,20 +832,23 @@
   <!-- ==============================
        ACCESS
   ============================== -->
-  <section id="access">
+ <section id="access">
 
-    <div class="section-title">
-      <h2>ACCESS</h2>
-      <p>アクセス</p>
-    </div>
+  <div class="section-title">
+    <h2>ACCESS</h2>
+    <p>アクセス</p>
+  </div>
 
-    <div class="access-content">
+  <div class="access-container">
 
-      <!-- ここを実際のお店の情報に変更してください -->
+    <!-- 店舗情報 -->
+    <div class="access-info">
+
+      <h3>LUMINA HAIR STUDIO</h3>
 
       <p>
-        〒000-0000<br>
-        奈良県○○市○○町1-2-3
+        〒630-0000<br>
+        奈良県奈良市○○町1-2-3
       </p>
 
       <p>
@@ -581,9 +863,26 @@
         CLOSE：毎週月曜日
       </p>
 
+      <p>
+        JR奈良駅より徒歩5分
+      </p>
+
     </div>
 
-  </section>
+    <!-- Google Map -->
+    <div class="access-map">
+
+      <iframe
+        src="https://www.google.com/maps?q=JR奈良駅&output=embed"
+        loading="lazy"
+        title="LUMINA HAIR STUDIO アクセスマップ">
+      </iframe>
+
+    </div>
+
+  </div>
+
+</section>
 
 
   <!-- ==============================
@@ -621,7 +920,7 @@
   </footer>
 
   <!-- 予約画面 -->
-<div id="reserve-form" class="modal">
+<div id="reserve-form" class="modal" onclick="closeOutside(event)">
 
     <div class="modal-content">
 
@@ -630,13 +929,20 @@
         <h2>WEB予約</h2>
 
         <p>お名前</p>
-        <input type="text" placeholder="山田 太郎">
+        <input
+  type="text"
+  id="customer-name"
+  placeholder="山田 太郎"
+>
 
         <p>希望日</p>
-        <input type="date">
+       <input
+  type="date"
+  id="reservation-date"
+>
 
         <p>メニュー</p>
-        <select>
+       <select id="reservation-menu">
             <option>カット</option>
             <option>カラー</option>
             <option>トリートメント</option>
@@ -660,10 +966,51 @@ function reserve() {
 function closeReservation() {
     document.getElementById("reserve-form").style.display = "none";
 }
+function closeOutside(event) {
+  if (event.target.id === "reserve-form") {
+    closeReservation();
+  }
+}
 function sendReservation() {
 
-    alert("予約を受け付けました！");
 
+  const name =
+    document.getElementById("customer-name").value;
+
+  const date =
+    document.getElementById("reservation-date").value;
+
+  const menu =
+    document.getElementById("reservation-menu").value;
+
+
+  if (name === "") {
+
+    alert("お名前を入力してください。");
+    return;
+
+  }
+
+
+  if (date === "") {
+
+    alert("希望日を選択してください。");
+    return;
+
+  }
+
+
+  alert(
+    name + "様\n\n" +
+    "ご予約内容\n" +
+    "日付：" + date + "\n" +
+    "メニュー：" + menu
+  );
+document.getElementById("reserve-form").style.display = "none";
+
+document.getElementById("customer-name").value = "";
+document.getElementById("reservation-date").value = "";
+document.getElementById("reservation-menu").selectedIndex = 0;
 }
 
 </script>
