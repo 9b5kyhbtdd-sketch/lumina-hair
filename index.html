@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- スマホ対応に必要 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LUMINA HAIR STUDIO| Hair Salon</title>
+
+  <style>
+    /* ==============================
+       基本設定
+    ============================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+        "Yu Gothic", sans-serif;
+      color: #4a443e;
+      background-color: #ffffff;
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ==============================
+       ヘッダー
+    ============================== */
+    header {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.95);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 7%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #eee7df;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 25px;
+      letter-spacing: 3px;
+      color: #5f554b;
+    }
+
+    nav ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 35px;
+    }
+
+    nav a {
+      font-size: 13px;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #b59c7d;
+    }
+
+    /* WEB予約ボタン */
+    .reserve-button {
+      background-color: #9c8468;
+      color: white;
+      padding: 12px 22px;
+    }
+
+    .reserve-button:hover {
+      background-color: #7f6b55;
+      color: white;
+    }
+
+    /* ==============================
+       トップ画像
+    ============================== */
+    .hero {
+      height: 100vh;
+
+      /*
+        ↓ トップ画像です。
+        後から自分の画像に変更する場合は、
+
+        url("salon.jpg")
+
+        のように書き換えてください。
+      */
+      background-image:
+        linear-gradient(
+          rgba(40, 35, 30, 0.18),
+          rgba(40, 35, 30, 0.18)
+        ),
+        url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=85");
+
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-content h1 {
+      font-family: Georgia, serif;
+      font-size: 55px;
+      font-weight: normal;
+      letter-spacing: 8px;
+      margin-bottom: 10px;
+    }
+
+    .hero-content p {
+      font-size: 15px;
+      letter-spacing: 4px;
+    }
+
+    /* ==============================
+       共通セクション
+    ============================== */
+    section {
+      padding: 100px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-family: Georgia, serif;
+      font-size: 30px;
+      font-weight: normal;
+      letter-spacing: 5px;
+      color: #665a4d;
+    }
+
+    .section-title p {
+      font-size: 12px;
+      color: #a28f7b;
+      margin-top: 5px;
+    }
+
+    /* ==============================
+       CONCEPT
+    ============================== */
+    #concept {
+      background-color: #f8f5f0;
+      text-align: center;
+    }
+
+    .concept-text {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .concept-text h3 {
+      font-family: Georgia, serif;
+      font-size: 24px;
+      font-weight: normal;
+      margin-bottom: 25px;
+      letter-spacing: 2px;
+    }
+
+    .concept-text p {
+      font-size: 14px;
+      line-height: 2.2;
+    }
+
+    /* ==============================
+       MENU
+    ============================== */
+    .menu-list {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 5px;
+      border-bottom: 1px solid #ded5ca;
+    }
+
+    .menu-name {
+      font-family: Georgia, serif;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    .menu-price {
+      font-size: 16px;
+      color: #8c765f;
+    }
+
+    /* ==============================
+       ACCESS
+    ============================== */
+    #access {
+      background-color: #f8f5f0;
+    }
+
+    .access-content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .access-content p {
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    /* ==============================
+       予約エリア
+    ============================== */
+    .reservation {
+      background-color: #d8c7b4;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .reservation h2 {
+      font-family: Georgia, serif;
+      font-weight: normal;
+      letter-spacing: 4px;
+      margin-bottom: 15px;
+    }
+
+    .reservation p {
+      margin-bottom: 30px;
+    }
+
+    .big-reserve-button {
+      display: inline-block;
+      background-color: #776451;
+      color: white;
+      padding: 17px 55px;
+      letter-spacing: 3px;
+      transition: 0.3s;
+    }
+
+    .big-reserve-button:hover {
+      background-color: #5e4e3e;
+    }
+
+    /* ==============================
+       フッター
+    ============================== */
+    footer {
+      background-color: #4f473f;
+      color: white;
+      text-align: center;
+      padding: 45px 20px;
+    }
+
+    footer .footer-logo {
+      font-family: Georgia, serif;
+      font-size: 22px;
+      letter-spacing: 4px;
+      margin-bottom: 15px;
+    }
+
+    footer p {
+      font-size: 11px;
+      color: #d5cdc5;
+    }
+
+    /* ==============================
+       スマートフォン対応
+       画面幅768px以下で適用
+    ============================== */
+    @media (max-width: 768px) {
+
+      header {
+        padding: 15px 5%;
+        flex-direction: column;
+      }
+
+      .logo {
+        font-size: 21px;
+        margin-bottom: 10px;
+      }
+
+      nav ul {
+        gap: 14px;
+      }
+
+      nav a {
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+
+      .reserve-button {
+        padding: 8px 10px;
+      }
+
+      .hero-content h1 {
+        font-size: 34px;
+        letter-spacing: 5px;
+      }
+
+      .hero-content p {
+        font-size: 12px;
+        letter-spacing: 2px;
+      }
+
+      section {
+        padding: 75px 7%;
+      }
+
+      .section-title {
+        margin-bottom: 40px;
+      }
+
+      .section-title h2 {
+        font-size: 25px;
+      }
+
+      .concept-text h3 {
+        font-size: 20px;
+      }
+
+      .menu-name {
+        font-size: 16px;
+      }
+
+      .menu-price {
+        font-size: 14px;
+      }
+    }
+    /* 予約画面全体 */
+.modal {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    justify-content: center;
+    align-items: center;
+}
+
+/* 白い予約フォーム */
+.modal-content {
+    background-color: white;
+
+    width: 350px;
+    padding: 30px;
+
+    border-radius: 12px;
+
+    position: relative;
+}
+
+/* ×ボタン */
+.close-btn {
+    position: absolute;
+
+    top: 10px;
+    right: 15px;
+
+    border: none;
+    background: none;
+
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* 入力欄 */
+.modal-content input,
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+
+    box-sizing: border-box;
+}
+/* =========================
+   スマートフォン用
+========================= */
+
+@media (max-width: 768px) {
+     
+     header {
+        padding: 15px 20px;
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 13px;
+    }
+
+    .hero {
+        height: 500px;
+        padding: 0 20px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .menu-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-card {
+        width: 80%;
+        max-width: 320px;
+    }
+
+    .modal-content {
+        width: 80%;
+        max-width: 350px;
+    }
+
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ==============================
+       ヘッダー
+  ============================== -->
+  <header>
+
+    <a href="#home" class="logo">
+      LUMINA HAIR STUDIO
+    </a>
+
+    <nav>
+      <ul>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#concept">CONCEPT</a></li>
+        <li><a href="#menu">MENU</a></li>
+        <li><a href="#access">ACCESS</a></li>
+
+        <!-- 予約サイトができたら href="#" をURLに変更 -->
+        <li>
+          <a href="#" class="reserve-btn" onclick="reserve()">WEB予約</a>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </header>
+
+
+  <!-- ==============================
+       HOME
+  ============================== -->
+  <section id="home" class="hero">
+
+    <div class="hero-content">
+      <h1>LUMINA HAIR STUDIO</h1>
+      <p>Beauty begins with you.</p>
+    </div>
+
+  </section>
+
+
+  <!-- ==============================
+       CONCEPT
+  ============================== -->
+  <section id="concept">
+
+    <div class="section-title">
+      <h2>CONCEPT</h2>
+      <p>私たちの想い</p>
+    </div>
+
+    <div class="concept-text">
+
+      <h3>あなたらしい美しさを、もっと自然に。</h3>
+
+      <p>
+        LUMINA HAIR STUDIOは、一人ひとりの個性とライフスタイルに寄り添う
+        ヘアサロンです。<br>
+        丁寧なカウンセリングと確かな技術で、
+        毎日が少し特別になるようなスタイルをご提案します。
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==============================
+       MENU
+  ============================== -->
+  <section id="menu">
+
+    <div class="section-title">
+      <h2>MENU</h2>
+      <p>メニュー・料金</p>
+    </div>
+
+    <div class="menu-list">
+
+      <div class="menu-item">
+        <span class="menu-name">CUT</span>
+        <span class="menu-price">¥5,500</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-name">COLOR</span>
+        <span class="menu-price">¥7,700〜</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-name">TREATMENT</span>
+        <span class="menu-price">¥5,500〜</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==============================
+       ACCESS
+  ============================== -->
+  <section id="access">
+
+    <div class="section-title">
+      <h2>ACCESS</h2>
+      <p>アクセス</p>
+    </div>
+
+    <div class="access-content">
+
+      <!-- ここを実際のお店の情報に変更してください -->
+
+      <p>
+        〒000-0000<br>
+        奈良県○○市○○町1-2-3
+      </p>
+
+      <p>
+        TEL：000-0000-0000
+      </p>
+
+      <p>
+        OPEN：10:00 - 19:00
+      </p>
+
+      <p>
+        CLOSE：毎週月曜日
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==============================
+       WEB予約
+  ============================== -->
+  <div class="reservation">
+
+    <h2>RESERVATION</h2>
+
+    <p>
+      ご予約はこちらから
+    </p>
+
+    <!-- 予約サイトができたら href="#" をURLに変更 -->
+    <a href="#" class="big-reserve-button">
+      WEB予約
+    </a>
+
+  </div>
+
+
+  <!-- ==============================
+       フッター
+  ============================== -->
+  <footer>
+
+    <div class="footer-logo">
+      aa
+    </div>
+
+    <p>
+      © 2026 aa STUDIO. All Rights Reserved.
+    </p>
+
+  </footer>
+
+  <!-- 予約画面 -->
+<div id="reserve-form" class="modal">
+
+    <div class="modal-content">
+
+        <button class="close-btn" onclick="closeReservation()">×</button>
+
+        <h2>WEB予約</h2>
+
+        <p>お名前</p>
+        <input type="text" placeholder="山田 太郎">
+
+        <p>希望日</p>
+        <input type="date">
+
+        <p>メニュー</p>
+        <select>
+            <option>カット</option>
+            <option>カラー</option>
+            <option>トリートメント</option>
+        </select>
+
+        <br><br>
+
+        <button onclick="sendReservation()">
+            予約する
+        </button>
+
+    </div>
+
+</div>
+  
+<script>
+
+function reserve() {
+    document.getElementById("reserve-form").style.display = "flex";
+}
+function closeReservation() {
+    document.getElementById("reserve-form").style.display = "none";
+}
+function sendReservation() {
+
+    alert("予約を受け付けました！");
+
+}
+
+</script>
+</body>
+</html>
